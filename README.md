@@ -73,10 +73,16 @@ built in).
 
 ## Results
 
-## Results
-
 Simulation run for the ISS (a = 6798 km, e = 0.0006, i = 51.6°) against a
 ground station at 3.60°N, 98.67°E, propagated over 48 hours.
+
+### Orbit Propagation
+![ISS Orbit](images/orbit_propagation.png)
+
+Two-body propagation via `ode45`, plotted in the ECI frame. The orbit
+holds a constant radius of ~6798 km (eccentricity of only 0.0006 keeps
+it very close to circular), confirming stable, physically consistent
+propagation.
 
 ### Ground Track
 ![Ground Track](images/ground_track.png)
@@ -86,15 +92,19 @@ pattern for a 51.6° inclined orbit, bounded between ±51.6° latitude.
 Green segments mark the 6 arcs where the satellite passed within
 line-of-sight of the ground station.
 
+### Animated 3D Orbit
+![3D Orbit](images/animated_globe.png)
+
+Full animation shows the satellite orbiting a rotating Earth in real
+time, with the ground station (red) staying fixed to the surface as
+Earth rotates beneath the orbit plane.
+
 ### Elevation Angle Over Time
 ![Elevation Plot](images/elevation_plot.png)
 
 Each spike corresponds to one orbital pass (~92 min period). Shaded
 green regions mark the 6 windows where elevation exceeded the 10°
 mask angle.
-
-### Animated 3D Orbit
-![3D Orbit](images/animated_globe.png)
 
 ### Communication Windows (48-hour window, 10° elevation mask)
 
@@ -117,3 +127,4 @@ from a low grazing pass (10.6°) to a strong near-overhead pass (43.2°).
   against a known pass prediction (e.g. from Heavens-Above or N2YO).
 - Add J2 perturbation for improved long-duration accuracy.
 - Switch to a WGS84 ellipsoidal Earth model for the geodetic conversions.
+- Extend to multiple ground stations tracked simultaneously.
