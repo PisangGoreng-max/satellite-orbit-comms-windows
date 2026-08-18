@@ -73,8 +73,43 @@ built in).
 
 ## Results
 
-*(Add screenshots/plots here once generated, e.g. the ground track image
-and the elevation-vs-time plot with shaded comm windows.)*
+## Results
+
+Simulation run for the ISS (a = 6798 km, e = 0.0006, i = 51.6°) against a
+ground station at 3.60°N, 98.67°E, propagated over 48 hours.
+
+### Ground Track
+![Ground Track](images/ground_track.png)
+
+The satellite's ground track forms the characteristic sinusoidal weave
+pattern for a 51.6° inclined orbit, bounded between ±51.6° latitude.
+Green segments mark the 6 arcs where the satellite passed within
+line-of-sight of the ground station.
+
+### Elevation Angle Over Time
+![Elevation Plot](images/elevation_plot.png)
+
+Each spike corresponds to one orbital pass (~92 min period). Shaded
+green regions mark the 6 windows where elevation exceeded the 10°
+mask angle.
+
+### Animated 3D Orbit
+![3D Orbit](images/animated_globe.png)
+
+### Communication Windows (48-hour window, 10° elevation mask)
+
+| Rise (AOS) | Set (LOS) | Duration | Max Elevation |
+|---|---|---|---|
+| 01:15:00 | 01:21:00 | 6.0 min | 43.2° |
+| 12:50:00 | 12:56:00 | 6.0 min | 42.4° |
+| 24:31:00 | 24:31:00 | 0.0 min | 10.6° |
+| 26:05:00 | 26:10:00 | 5.0 min | 23.7° |
+| 36:05:00 | 36:06:00 | 1.0 min | 10.7° |
+| 37:40:00 | 37:45:00 | 5.0 min | 24.6° |
+
+**Total: 6 passes in 48 hours**, averaging roughly 1 pass every 8 hours,
+with usable pass durations of 1–6 minutes and peak elevations ranging
+from a low grazing pass (10.6°) to a strong near-overhead pass (43.2°).
 
 ## Possible next steps
 
